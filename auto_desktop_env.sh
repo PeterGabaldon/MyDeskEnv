@@ -21,7 +21,7 @@ apt update
 # First, install zsh and make it default shell
 echo "Ok, I will install zsh and make it default first"
 apt install zsh
-chsh -s $(which zsh)
+chsh -s $(which zsh) "$SUDO_USER"
 
 echo "Getting powerlevel10k theme for zsh"
 # Get P10K
