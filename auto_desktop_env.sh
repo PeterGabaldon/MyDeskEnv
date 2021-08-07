@@ -70,7 +70,7 @@ cd "/home/$SUDO_USER/MyDeskEnv/"
 cp -a .p10k.zsh .tmux.conf .vimrc .zshrc .vim -t "/home/$SUDO_USER/"
 
 # Change background
-gsettings set org.mate.background picture-filename "/home/$SUDO_USER/MyDeskEnv/background.jpg"
+sudo -u "$SUDO_USER" gsettings set org.mate.background picture-filename "/home/$SUDO_USER/MyDeskEnv/background.jpg"
 
 echo "I will reboot the system now..."
 sleep 3 && reboot
