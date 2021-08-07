@@ -36,7 +36,8 @@ wget -qP "/usr/share/zsh-sudo/sudo.plugin.zsh" "https://raw.githubusercontent.co
 
 # Bat and bat-extras
 echo "Installing bat, the cat clone with wings :P, and bat-extras"
-apt install bat
+wget -qP "/home/$SUDO_USER/" "https://github.com/sharkdp/bat/releases/download/v0.18.2/bat_0.18.2_amd64.deb"
+dpkg -i "/home/$SUDO_USER/bat_0.18.2_amd64.deb"
 
 git clone https://github.com/eth-p/bat-extras.git "/home/$SUDO_USER/bat-extras"
 "/home/$SUDO_USER/bat-extras/build.sh" --install
