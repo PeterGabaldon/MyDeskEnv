@@ -31,18 +31,19 @@ echo "Installing zsh plugins..."
 # Install zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions.git /usr/share/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /usr/share/zsh-syntax-highlighting
-git clone https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sudo/sudo.plugin.zsh /usr/share/zsh-sudo
+
+wget -qP "/usr/share/zsh-sudo/sudo.plugin.zsh" "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh"
 
 # Bat and bat-extras
 echo "Installing bat, the cat clone with wings :P, and bat-extras"
 apt install bat
 
 git clone https://github.com/eth-p/bat-extras.git "/home/$SUDO_USER/bat-extras"
-"/home/$SUDO_USER/bat-extras/build.sh --install"
+"/home/$SUDO_USER/bat-extras/build.sh" --install
 
 # lsd
 echo "Installing lsd..."
-wget -qP "/home/$SUDO_USER/ https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb"
+wget -qP "/home/$SUDO_USER/" "https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb"
 dpkg -i "/home/$SUDO_USER/lsd_0.20.1_amd64.deb"
 
 # tpm
@@ -61,7 +62,7 @@ apt update
 apt install sublime-text
 
 # Install HackNerd font
-unzip "/home/$SUDO_USER/MyDeskEnv/Hack.zip -d /usr/share/fonts"
+unzip "/home/$SUDO_USER/MyDeskEnv/Hack.zip" -d "/usr/share/fonts"
 
 # Move config files
 echo "Copying all config files..."
