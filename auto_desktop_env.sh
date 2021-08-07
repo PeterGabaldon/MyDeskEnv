@@ -90,7 +90,7 @@ cp -a .p10k.zsh .tmux.conf .vimrc .zshrc .vim -t "$HOME/"
 
 # Change background
 apt install gsettings
-gsettings set org.mate.background picture-filename ""$HOME/MyDeskEnv/background.jpg""
+gsettings set org.mate.background picture-filename "$HOME/MyDeskEnv/background.jpg"
 
 echo "I will reboot the system now..."
 sleep 3 && reboot
