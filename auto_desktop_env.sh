@@ -51,7 +51,7 @@ dpkg -i "/home/$SUDO_USER/lsd_0.20.1_amd64.deb"
 echo "Installing tpm"
 git clone https://github.com/tmux-plugins/tpm "/home/$SUDO_USER/.tmux/plugins/tpm"
 
-echo "Remember to press Ctrl+a and the I in a tmux session to install it"
+echo "Remember to press Ctrl+a and then I in a tmux session to install the nord theme"
 
 # Sublime text
 echo "Installing sublime text"
@@ -69,6 +69,7 @@ unzip "/home/$SUDO_USER/MyDeskEnv/Hack.zip" -d "/usr/share/fonts"
 echo "Copying all config files..."
 cd "/home/$SUDO_USER/MyDeskEnv/"
 cp -a .p10k.zsh .tmux.conf .vimrc .zshrc .vim -t "/home/$SUDO_USER/"
+chown -R "$SUDO_USER:$SUDO_USER" "/home/$SUDO_USER/.p10k.zsh" "/home/$SUDO_USER/.tmux.conf" "/home/$SUDO_USER/.vimrc" "/home/$SUDO_USER/.zshrc" "/home/$SUDO_USER/.vim"
 
 # Change background
 sudo -u "$SUDO_USER" gsettings set org.mate.background picture-filename "/home/$SUDO_USER/MyDeskEnv/background.jpg"
