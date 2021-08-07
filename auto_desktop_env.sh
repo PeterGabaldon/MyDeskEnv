@@ -28,7 +28,7 @@ LIGHTCYAN='\033[1;36m'
 WHITE='\033[1;37m'
 
 # Clone repo to geit config files
-git clone https://github.com/PeterGabaldon/MyDeskEnv.git "$HOME/MyDeskEnv"
+git clone https://github.com/PeterGabaldon/MyDeskEnv.git "/home/$SUDO_USER/MyDeskEnv"
 
 echo "Sudo will ask for password when needed (I suppose current user is a sudoer)"
 
@@ -43,7 +43,7 @@ chsh -s $(which zsh)
 
 echo "Getting powerlevel10k theme for zsh"
 # Get P10K
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME/powerlevel10k"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "/home/$SUDO_USER/powerlevel10k"
 
 echo "Installing zsh plugins..."
 # Install zsh plugins
@@ -55,17 +55,17 @@ git clone https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sudo/sudo.plugi
 echo "Installing bat, the cat clone with wings :P, and bat-extras"
 apt install bat
 
-git clone https://github.com/eth-p/bat-extras.git "$HOME/bat-extras"
-"$HOME/bat-extras/build.sh --install"
+git clone https://github.com/eth-p/bat-extras.git "/home/$SUDO_USER/bat-extras"
+"/home/$SUDO_USER/bat-extras/build.sh --install"
 
 # lsd
 echo "Installing lsd..."
-wget -qP "$HOME/ https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb"
-dpkg -i "$HOME/lsd_0.20.1_amd64.deb"
+wget -qP "/home/$SUDO_USER/ https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb"
+dpkg -i "/home/$SUDO_USER/lsd_0.20.1_amd64.deb"
 
 # tpm
 echo "Installing tpm"
-git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+git clone https://github.com/tmux-plugins/tpm "/home/$SUDO_USER/.tmux/plugins/tpm"
 
 echo "Remember to press Ctrl+a and the I in a tmux session to install it"
 
@@ -79,18 +79,18 @@ apt update
 apt install sublime-text
 
 # Install HackNerd font
-unzip "$HOME/MyDeskEnv/Hack.zip -d /usr/share/fonts"
+unzip "/home/$SUDO_USER/MyDeskEnv/Hack.zip -d /usr/share/fonts"
 
 apt install wmctrl
 
 # Move config files
 echo "Copying all config files..."
-cd "$HOME/MyDeskEnv/"
-cp -a .p10k.zsh .tmux.conf .vimrc .zshrc .vim -t "$HOME/"
+cd "/home/$SUDO_USER/MyDeskEnv/"
+cp -a .p10k.zsh .tmux.conf .vimrc .zshrc .vim -t "/home/$SUDO_USER/"
 
 # Change background
 apt install gsettings
-gsettings set org.mate.background picture-filename "$HOME/MyDeskEnv/background.jpg"
+gsettings set org.mate.background picture-filename "/home/$SUDO_USER/MyDeskEnv/background.jpg"
 
 echo "I will reboot the system now..."
 sleep 3 && reboot
