@@ -9,7 +9,7 @@
 - PowerLeve10K
 - vim
 - tmux
-- bat
+- batcat
 - lsd
 - HackNerd font
 
