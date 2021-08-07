@@ -69,7 +69,7 @@ unzip "/home/$SUDO_USER/MyDeskEnv/Hack.zip" -d "/usr/share/fonts"
 echo "Copying all config files..."
 cd "/home/$SUDO_USER/MyDeskEnv/"
 cp -a .p10k.zsh .tmux.conf .vimrc .zshrc .vim -t "/home/$SUDO_USER/"
-chown -R "$SUDO_USER:$SUDO_USER" "/home/$SUDO_USER/.p10k.zsh" "/home/$SUDO_USER/.tmux.conf" "/home/$SUDO_USER/.vimrc" "/home/$SUDO_USER/.zshrc" "/home/$SUDO_USER/.vim"
+chown -R "$SUDO_USER:$SUDO_USER" "/home/$SUDO_USER/.p10k.zsh" "/home/$SUDO_USER/.tmux.conf" "/home/$SUDO_USER/.vimrc" "/home/$SUDO_USER/.zshrc" "/home/$SUDO_USER/.vim" "/home/$SUDO_USER/.tmux"
 
 # Change background
 sudo -u "$SUDO_USER" gsettings set org.mate.background picture-filename "/home/$SUDO_USER/MyDeskEnv/background.jpg"
