@@ -81,15 +81,12 @@ apt install sublime-text
 # Install HackNerd font
 unzip "/home/$SUDO_USER/MyDeskEnv/Hack.zip -d /usr/share/fonts"
 
-apt install wmctrl
-
 # Move config files
 echo "Copying all config files..."
 cd "/home/$SUDO_USER/MyDeskEnv/"
 cp -a .p10k.zsh .tmux.conf .vimrc .zshrc .vim -t "/home/$SUDO_USER/"
 
 # Change background
-apt install gsettings
 gsettings set org.mate.background picture-filename "/home/$SUDO_USER/MyDeskEnv/background.jpg"
 
 echo "I will reboot the system now..."

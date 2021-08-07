@@ -51,7 +51,6 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-#source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -82,12 +81,12 @@ source /usr/share/zsh-sudo/sudo.plugin.zsh
 
 compdef _man batman
 
-### Add transparency
-
-if [ -z $TMUX ]; then
-
-	x_window_id=$(wmctrl -lp | tail -n1 | grep -o -E "0x[a-f0-9]{8}.+${PPID}" | awk '{print $1}')
-	xprop -id ${x_window_id} -format _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 0xF4FFFFFF
-fi
+### Add transparency (For gnome terminal newest versions, not needed in parrot because Mate Terminal can config transparency)
+#
+#if [ -z $TMUX ]; then
+#
+#	x_window_id=$(wmctrl -lp | tail -n1 | grep -o -E "0x[a-f0-9]{8}.+${PPID}" | awk '{print $1}')
+#	xprop -id ${x_window_id} -format _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 0xF4FFFFFF
+#fi
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
