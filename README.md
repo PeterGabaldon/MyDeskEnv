@@ -8,7 +8,7 @@
 	- sudo-plugin
 - PowerLeve10K
 - vim
-- tmux
+- tmux (Install theme with Ctrl+a, i.e. the prefix, and then I)
 - batcat
 - lsd
 - HackNerd font
