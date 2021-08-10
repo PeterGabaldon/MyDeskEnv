@@ -6,7 +6,7 @@
 	- auto-suggestions
 	- syntax-highlight
 	- sudo-plugin
-- PowerLeve10K
+- powerlevel10k
 - vim
 - tmux (Install theme with Ctrl+a, i.e. the prefix, and then I)
 - batcat
