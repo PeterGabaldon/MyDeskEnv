@@ -3,7 +3,7 @@
 # Pedro Gabaldon (PeterG11)
 # https://petergabaldon.github.io/
 
-if [ $EUID -ne 0 ];
+if [ $EUID -ne 0 -o -z $SUDO_USER ];
 then
   echo "I should be run as root, sorry :("
   exit 1
@@ -11,8 +11,6 @@ fi
 
 # Clone repo to geit config files
 git clone https://github.com/PeterGabaldon/MyDeskEnv.git "/home/$SUDO_USER/MyDeskEnv"
-
-echo "Sudo will ask for password when needed (I suppose current user is a sudoer)"
 
 export DEBIAN_FRONTEND=nointeractive
 echo "Updating apt cache..."
@@ -36,16 +34,16 @@ wget -qP "/usr/share/zsh-sudo/sudo.plugin.zsh" "https://raw.githubusercontent.co
 
 # Bat and bat-extras
 echo "Installing bat, the cat clone with wings :P, and bat-extras"
-wget -qP "/home/$SUDO_USER/" "https://github.com/sharkdp/bat/releases/download/v0.18.2/bat_0.18.2_amd64.deb"
-dpkg -i "/home/$SUDO_USER/bat_0.18.2_amd64.deb"
+wget -qP "/home/$SUDO_USER/" "https://github.com/sharkdp/bat/releases/download/v0.22.1/bat_0.22.1_amd64.deb"
+dpkg -i "/home/$SUDO_USER/bat_0.22.1_amd64.deb"
 
 git clone https://github.com/eth-p/bat-extras.git "/home/$SUDO_USER/bat-extras"
 "/home/$SUDO_USER/bat-extras/build.sh" --install
 
 # lsd
 echo "Installing lsd..."
-wget -qP "/home/$SUDO_USER/" "https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb"
-dpkg -i "/home/$SUDO_USER/lsd_0.20.1_amd64.deb"
+wget -qP "/home/$SUDO_USER/" "https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd_0.23.1_amd64.deb"
+dpkg -i "/home/$SUDO_USER/lsd_0.23.1_amd64.deb"
 
 # tpm
 echo "Installing tpm"
